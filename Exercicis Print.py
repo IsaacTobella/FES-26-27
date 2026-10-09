@@ -1,3 +1,9 @@
+import os
+import subprocess
+
+clear_command = ["cmd", "/c", "cls"] if os.name == "nt" else ["clear"]
+subprocess.run(clear_command, check=False)  # Neteja la consola per facilitar la visualització
+
 # Exercici 1
 # Imprimeix el teu nom i cognom a la consola
 
