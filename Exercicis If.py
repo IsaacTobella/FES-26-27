@@ -41,6 +41,19 @@ else:
 # Demana a l'usuari que introdueixi un any i determina si és de traspàs.
 # Un any és de traspàs si és divisible per 4, excepte si és divisible per 100
 # però no per 400.
+any = int(input("\n\nIntrodueix el any: "))
+
+if any % 4 == 0:
+    if any % 100 == 0:
+        if any % 400 == 0:
+            print(f"\nEl any {any} és de traspàs.")
+        else:
+            print(f"El any {any} no és de traspàs.")
+    else:
+        print(f"El any {any} és de traspàs.")
+else:
+    print(f"El any {any} no és de traspàs.")
+
 
 # Exercici 4: Classificar edats
 # Demana a l'usuari que introdueixi una edat i classifica-la en:
@@ -114,3 +127,16 @@ else:
 # d'usuaris. Assigna prioritat crítica si afecta un servei crític i no hi ha
 # alternativa, o si afecta almenys 50 usuaris i no hi ha alternativa; alta si
 # afecta almenys 10 usuaris o un servei crític; en qualsevol altre cas, baixa.
+
+afecta_servei = input("Afecta un servei crític?\n")
+num_usuaris_afectats = int(input("A quanta gent ha afectat?\n"))
+if num_usuaris_afectats < 0:
+    print(f"No pot ser negatiu el nombre d'usuaris.")
+alternativa = input("Hi ha alternativa de connexió?")
+
+if alternativa == 'no' and (afecta_servei == 'si' or num_usuaris_afectats > 50):
+    print(f"Incidència de màxima prioritat.")
+elif num_usuaris_afectats >= 10:
+    print(f"Incidència d'alta prioritat.")
+else:
+    print(f"Incidència de baixa prioritat.")
